@@ -1,8 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
+  content: ['./templates/**/*.html',],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        borel: ['Borel', 'cursive'],
+      },
+      colors:{
+        "custom-blue1": "#164863",
+        "custom-blue2": "#427D9D",
+        "custom-blue3": "#9BBEC8",
+        "custom-blue4": "#DDF2FD"
+      },
+    },
   },
   plugins: [],
 }

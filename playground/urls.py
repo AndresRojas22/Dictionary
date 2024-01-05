@@ -6,4 +6,5 @@ urlpatterns = [
     path('hello', views.SayHello),
     path('home', views.Home),
     path('definition/', views.word),
+    path('result/', views.search),
 ]

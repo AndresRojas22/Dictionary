@@ -1,4 +1,6 @@
+{% load custom_filters %}
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,12 +10,38 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Borel&display=swap" rel="stylesheet">
-    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@1,600&display=swap" rel="stylesheet">
+    <title>Andyctionary</title>
 </head>
 <body>
-    <header class= "bg-custom-blue1 p-4">
-        <h1 class="text-center font-borel text-white xl:text-6xl text-5xl mt-8">Andyctionary</>
+    <header class="bg-custom-blue1 p-4">
+        <h1 class="text-center font-borel text-white xl:text-6xl text-5xl mt-8">Andyctionary</h1>
     </header>
-    <h1>Definition for {{word}}</h1>
+
+    {% if data %}
+        <h1>Definition for {{ data.0.word }}</h1>
+        <strong>Phonetics: <span class="font-noto">[{{ data.0.phonetics.1.text|custom_replace }}]</span></strong><br>
+        
+        {% for meanings in data.0.meanings %}
+            <strong>Part of speech: {{ meanings.partOfSpeech }}</strong><br>
+            
+            {% for definition in meanings.definitions %}
+                <strong>Definitions: {{ definition.definition }}</strong><br>
+                {% if definition.example %}
+                    <strong>Example: {{ definition.example }}</strong><br>
+                {% endif %}
+                <br>
+            {% endfor %}
+        {% endfor %}
+
+        {% if first_example %}
+            <strong>First Example: {{ first_example }}</strong><br>
+        {% endif %}
+
+    {% else %}
+        <strong>No results found for {{ data.0.word }}</strong>
+    {% endif %}
 </body>
 </html>

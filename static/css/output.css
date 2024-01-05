@@ -22699,6 +22699,10 @@ video {
   font-family: Borel, cursive;
 }
 
+.font-noto {
+  font-family: Noto Sans, sans-serif;
+}
+
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
@@ -53985,6 +53989,10 @@ video {
     font-family: Borel, cursive;
   }
 
+  .sm\:font-noto {
+    font-family: Noto Sans, sans-serif;
+  }
+
   .sm\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
@@ -84901,6 +84909,10 @@ video {
 
   .md\:font-borel {
     font-family: Borel, cursive;
+  }
+
+  .md\:font-noto {
+    font-family: Noto Sans, sans-serif;
   }
 
   .md\:text-xs {
@@ -115821,6 +115833,10 @@ video {
     font-family: Borel, cursive;
   }
 
+  .lg\:font-noto {
+    font-family: Noto Sans, sans-serif;
+  }
+
   .lg\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
@@ -146739,6 +146755,10 @@ video {
     font-family: Borel, cursive;
   }
 
+  .xl\:font-noto {
+    font-family: Noto Sans, sans-serif;
+  }
+
   .xl\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
@@ -177655,6 +177675,10 @@ video {
 
   .\32xl\:font-borel {
     font-family: Borel, cursive;
+  }
+
+  .\32xl\:font-noto {
+    font-family: Noto Sans, sans-serif;
   }
 
   .\32xl\:text-xs {

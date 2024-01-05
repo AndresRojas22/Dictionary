@@ -24,7 +24,7 @@
                     </svg>
                 </span>
 
-                <form action="definition/" method="post" class="flex justify-start items-start h-full w-full gap-3">
+                <form action="result/" method="POST" class="flex justify-start items-start h-full w-full gap-3">
                     {% csrf_token %}
                     {{ form }}
                     <input type="text" name="word" id="word" class="h-full w-full font-medium md:pl-2 focus:outline-none text-xl">

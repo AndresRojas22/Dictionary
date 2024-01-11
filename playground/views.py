@@ -21,14 +21,15 @@ def search(request):
         
         if response.status_code == 200:
             data = response.json()
+            num = 3
             first_example = None
             if data and 'meanings' in data[0]:
                 for definition in data[0]['meanings'][0]['definitions']:
                     if 'example' in definition and definition['example']:
                         first_example = definition['example']
                         break
-                    
-            return render(request, "definition.html", {"data":data, "first_example": first_example})
+                   
+            return render(request, "definition.html", {"data":data, "first_example": first_example, "num": num})
         else:
             return render(request, "definition.html",{"error_message":"Definition not found :("})
     return render(request, "home.html")

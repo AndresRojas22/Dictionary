@@ -15,33 +15,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@1,600&display=swap" rel="stylesheet">
     <title>Andyctionary</title>
 </head>
-<body>
+<body class="bg-gray-300">
     <header class="bg-custom-blue1 p-4">
         <h1 class="text-center font-borel text-white xl:text-6xl text-5xl mt-8">Andyctionary</h1>
     </header>
-
-    {% if data %}
-        <h1>Definition for {{ data.0.word }}</h1>
-        <strong>Phonetics: <span class="font-noto">[{{ data.0.phonetics.1.text|custom_replace }}]</span></strong><br>
-        
-        {% for meanings in data.0.meanings %}
-            <strong>Part of speech: {{ meanings.partOfSpeech }}</strong><br>
-            
-            {% for definition in meanings.definitions %}
-                <strong>Definitions: {{ definition.definition }}</strong><br>
-                {% if definition.example %}
-                    <strong>Example: {{ definition.example }}</strong><br>
-                {% endif %}
-                <br>
+    <div class="bg-white flex flex-col justify-center items-center mt-10 border-solid border-4 border-custom-blue1 m-80">
+        <div class="text-left">
+        {% if data %}
+            <span class="text-4xl text-left font-bold">{{ data.0.word }}</span>
+            <span class="ml-2 font-noto font-light">[{{ data.0.phonetics.1.text|custom_replace }}]</span>
+            <button><img src="{% static 'sound.png' %}" width="30px" height="30px" class="inline-block ml-3"></button>
+            <br>
+            {% for meanings in data.0.meanings|slice:":num" %}
+                <span class="font-serif font-bold">Part of speech: <span class="font-light">{{ meanings.partOfSpeech }}</span></span><br>
+                
+                {% for definition in meanings.definitions %}
+                    <span class="font-serif font-bold">Definition: <span class="font-light">{{ definition.definition }}</span></span><br>
+                    {% if definition.example %}
+                        <span class="font-serif font-bold">Example: <span class="font-light">"{{ definition.example }}"</span></span><br>
+                    {% endif %}
+                    <br>
+                {% endfor %}
             {% endfor %}
-        {% endfor %}
-
-        {% if first_example %}
-            <strong>First Example: {{ first_example }}</strong><br>
+        {% else %}
+            <span class="font-serif">No results found for {{ data.0.word }}</span>
         {% endif %}
-
-    {% else %}
-        <strong>No results found for {{ data.0.word }}</strong>
-    {% endif %}
+        </div>
+    </div>
 </body>
 </html>

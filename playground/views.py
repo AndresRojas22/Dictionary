@@ -21,7 +21,6 @@ def search(request):
         
         if response.status_code == 200:
             data = response.json()
-            value = False
             first_example = None
             if data and 'meanings' in data[0]:
                 for definition in data[0]['meanings'][0]['definitions']:
@@ -29,11 +28,8 @@ def search(request):
                         first_example = definition['example']
                         break
                    
-            return render(request, "definition.html", {"data":data, "first_example": first_example, "value": value})
+            return render(request, "definition.html", {"data":data, "first_example": first_example})
         else:
             return render(request, "definition.html",{"error_message":"Definition not found :("})
     return render(request, "home.html")
-
-def readMore(request, value):
-    search(value=False)
       

@@ -28,7 +28,7 @@ def search(request):
                         first_example = definition['example']
                         break
                    
-            return render(request, "definition.html", {"data":data, "first_example": first_example})
+            return render(request, "definition.html", {"data":data, "first_example": first_example, "word":input_value})
         else:
             return render(request, "definition.html",{"error_message":"Definition not found :("})
     return render(request, "home.html")

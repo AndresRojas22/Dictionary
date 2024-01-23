@@ -11,19 +11,19 @@
     <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}">
 </head>
 <body>
-    <footer id="footer">
-        <div class="bg-custom-blue1 p-2 lg:mt-72 md:mt-80 sm:mt-80 h-44 w-full">
-            <div class="flex justify-center">
-                <h1 class="font-serif text-lg text-white">Let's get in touch!</h1>
+    <footer id="footer" class="mt-8 sticky bottom-0">
+        <div class="bg-custom-blue1 py-10">
+            <div class="flex flex-col items-center">
+                <h1 class="font-serif text-lg text-white mb-5">Let's get in touch!</h1>
+                <div class="flex gap-3">
+                    <a href="https://linkedin.com/in/andrés-rojas-15832a266"><img src="{% static 'images/linkedin.png' %}"></a>
+                    <a href="https://github.com/AndresRojas22"><img src="{% static 'images/github.png' %}" width="40px" height="40px"></a>
+                    <a href="https://twitter.com/_Andick_"><img src="{% static 'images/x.png' %}" width="40px" height="40px"></a>
+                </div>
+                <div class="mt-7">
+                    <span class="text-white font-serif text-sm">2024 Developed by: Andrés Rojas</span>
+                </div>
             </div>
-                <div class="flex justify-center gap-3 mt-5">
-                    <img src="{% static 'images/linkedin.gif' %}" width="40px" height="40px">
-                    <img src="{% static 'images/githubg.gif' %}" width="40px" height="40px">
-                    <img src="{% static 'images/X.gif' %}" width="40px" height="40px">
-                </div>
-                <div class="flex justify-center mt-7">
-                    <span class="text-white font-serif text-sm">2024 Developed by:Andrés Rojas</span>
-                </div>
         </div>
     </footer>
 </body>

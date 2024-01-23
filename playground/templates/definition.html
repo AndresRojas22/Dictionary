@@ -74,6 +74,12 @@ Andyctionary
 </script>
 
 {% endblock content %}
-{% include "footer.html" %}
+{%block footer%}
+<div class="relative bottom-24 lg:bottom-20">
+    <div class="lg:mt-80 md:mt-64 mt-64 w-full">
+        {% include "footer.html" %}
+    </div>
+</div>
+{%endblock footer%}
 </html>
 

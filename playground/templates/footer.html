@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/output.css" %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Borel&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}">
+</head>
+<body>
+    <footer id="footer">
+        <div class="bg-custom-blue1 p-2 lg:mt-80 md:mt-80 sm:mt-80 h-44 w-full">
+            <div class="flex justify-center">
+                <h1 class="font-serif text-lg text-white">Let's get in touch!</h1>
+            </div>
+                <div class="flex justify-center gap-3 mt-5">
+                    <img src="{% static 'images/linkedin.gif' %}" width="40px" height="40px">
+                    <img src="{% static 'images/githubg.gif' %}" width="40px" height="40px">
+                    <img src="{% static 'images/X.gif' %}" width="40px" height="40px">
+                </div>
+                <div class="flex justify-center mt-7">
+                    <span class="text-white font-serif text-sm">2024 Developed by:Andrés Rojas</span>
+                </div>
+        </div>
+    </footer>
+</body>
+</html>

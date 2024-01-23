@@ -54,6 +54,7 @@ Andyctionary
         var moreText = document.getElementById("more");
         var btnText = document.getElementById("btn");
         var content = document.getElementById("content");
+        var footer = document.getElementById("footer");
 
         btnText.addEventListener("click", function() {
             if (dots.classList.contains("hidden")) {
@@ -61,6 +62,7 @@ Andyctionary
                 content.classList.remove("hidden");
                 btnText.innerHTML = "Read more...";
                 moreText.classList.add("hidden");
+                footer.style.maxHeight = "100px";
             } else {
                 dots.classList.add("hidden");
                 btnText.innerHTML = "Read less...";
@@ -72,5 +74,6 @@ Andyctionary
 </script>
 
 {% endblock content %}
+{% include "footer.html" %}
 </html>
 

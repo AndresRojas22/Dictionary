@@ -27,8 +27,20 @@ def search(request):
                     if 'example' in definition and definition['example']:
                         first_example = definition['example']
                         break
+                    
+            if data and 'phonetics' in data[0]:
+                num = 0
+                for audio in data[0]['phonetics']:
+                    for num in range(len(data[0]['phonetics'])):
+                        if "-us" in data[0]['phonetics'][num]['audio']:
+                            audio = data[0]['phonetics'][num]['audio']
+                        elif "-uk" in data[0]['phonetics'][num]['audio']:
+                            audio = data[0]['phonetics'][num]['audio']
+                        else:
+                            audio = data[0]['phonetics'][0]['audio']
+                
                    
-            return render(request, "definition.html", {"data":data, "first_example": first_example, "word":input_value})
+            return render(request, "definition.html", {"data":data, "first_example": first_example, "word":input_value,"audio":audio})
         else:
             return render(request, "definition.html",{"error_message":"Definition not found :("})
     return render(request, "home.html")

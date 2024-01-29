@@ -14,7 +14,8 @@ Andyctionary
         {% if data %}
             <span class="text-4xl text-left font-bold">{{ data.0.word }}</span>
             <span class="ml-2 font-noto font-light">[{{ data.0.phonetics.1.text|custom_replace }}]</span>
-            <button><img src="{% static 'images/sound.png' %}" width="30px" height="30px" class="inline-block ml-3"></button>
+            <button class="sound"><img src="{% static 'images/sound.png' %}" width="30px" height="30px" class="inline-block ml-3"></button>
+            <audio src="{{audio}}"></audio>
             <br>
         </div>
             <div id="content" class="inline">
@@ -55,6 +56,17 @@ Andyctionary
         var btnText = document.getElementById("btn");
         var content = document.getElementById("content");
         var footer = document.getElementById("footer");
+        var sound = document.getElementById("sound");
+
+        let boton = document.querySelector(".sound")
+        let audioEtiqueta = document.querySelector("audio")
+
+        boton.addEventListener("click", ()=>{
+            audioEtiqueta.setAttribute("src", "{{audio}}")
+            audioEtiqueta.play();
+            console.log("Playing: ${audioEtiqueta.src}")
+        })
+
 
         btnText.addEventListener("click", function() {
             if (dots.classList.contains("hidden")) {

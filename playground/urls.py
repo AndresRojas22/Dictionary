@@ -4,6 +4,6 @@ from . import views
 #URLConf
 urlpatterns = [
     path('hello', views.SayHello),
-    path('home', views.Home),
-    path('definition/', views.word),
+    path('home', views.Home, name='home'),
+    path('result', views.search, name='result'),
 ]

@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         borel: ['Borel', 'cursive'],
+        noto: ['Noto Sans', 'sans-serif']
       },
       colors:{
         "custom-blue1": "#164863",

@@ -13,10 +13,7 @@ def Home(request):
 def search(request):
     if request.method == 'POST':
         input_value = request.POST.get('word')
-        url = f'https://api.dictionaryapi.dev/api/v2/entries/en/{input_value}'
-        
-        print(f"Realizando API call a: {url}")
-        
+        url = f'https://api.dictionaryapi.dev/api/v2/entries/en/{input_value}'        
         response = requests.get(url)
         
         if response.status_code == 200:

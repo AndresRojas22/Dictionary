@@ -75,7 +75,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Dictionary.wsgi.application'
+WSGI_APPLICATION = 'Dictionary.wsgi.app'
 
 
 # Database

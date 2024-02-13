@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/output.css" %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Borel&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}">
+</head>
+
+<body>
+    <footer id="footer" class="mt-8 sticky bottom-0">
+        <div class="bg-custom-blue1 py-10">
+            <div class="flex flex-col items-center">
+                <h1 class="font-serif text-lg text-white mb-5">Let's get in touch!</h1>
+                <div class="flex gap-3">
+                    <a href="https://linkedin.com/in/andrés-rojas-15832a266"><img
+                            src="{% static 'images/linkedin.webp' %}"></a>
+                    <a href="https://github.com/AndresRojas22"><img src="{% static 'images/github.webp' %}" width="40px"
+                            height="40px"></a>
+                    <a href="https://twitter.com/_Andick_"><img src="{% static 'images/x.webp' %}" width="40px"
+                            height="40px"></a>
+                </div>
+                <div class="mt-7">
+                    <div class="flex items-center justify-center mt-5">
+                        <a href="https://librecounter.org/referer/show" target="_blank">
+                            <img height="40px" width="40px" src="https://librecounter.org/counter.svg"
+                                referrerPolicy="unsafe-url" />
+                        </a>
+                        <span class="font-serif text-sm text-center text-white ml-4">Analytics</span>
+                    </div>
+                    <span class="text-white font-serif text-sm">Data provided by <a
+                            href="https://dictionaryapi.dev/">Free Dictionary API</a></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

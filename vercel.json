@@ -1,7 +1,7 @@
 {
   "builds": [
     {
-      "src": "Dictionary/wsgi.py",
+      "src": "dictionary/wsgi.py",
       "use": "@vercel/python",
       "config": { "maxLambdaSize": "15mb", "runtime": "python" }
     },
@@ -18,7 +18,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "Dictionary/wsgi.py"
+      "dest": "dictionary/wsgi.py"
     }
   ]
 }

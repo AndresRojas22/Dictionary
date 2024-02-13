@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "builds": [{ "src": "dictionary", "use": "@vercel/python" }],
+  "routes": [{ "src": "/(.*)", "dest": "/dictionary/wsgi.py" }],
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "dictionary.settings"
+  }
+}

@@ -27,14 +27,19 @@ def search(request):
                     
             if data and 'phonetics' in data[0]:
                 num = 0
-                for audio in data[0]['phonetics']:
+                for audio in (data[0]['phonetics']):
                     for num in range(len(data[0]['phonetics'])):
                         if "-us" in data[0]['phonetics'][num]['audio']:
                             audio = data[0]['phonetics'][num]['audio']
+                            break
                         elif "-uk" in data[0]['phonetics'][num]['audio']:
                             audio = data[0]['phonetics'][num]['audio']
+                        elif "en/"+input_value in data[0]['phonetics'][num]['audio']:
+                            audio = data[0]['phonetics'][num]['audio']
+                            break
                         else:
                             audio = data[0]['phonetics'][0]['audio']
+                            continue
                 
                    
             return render(request, "definition.html", {"data":data, "first_example": first_example, "word":input_value,"audio":audio})

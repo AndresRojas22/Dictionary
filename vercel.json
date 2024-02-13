@@ -1,7 +1,7 @@
 {
   "builds": [
     {
-      "src": "django_blog/wsgi.py",
+      "src": "Dictionary/wsgi.py",
       "use": "@vercel/python",
       "config": { "maxLambdaSize": "15mb", "runtime": "python" }
     },
@@ -18,7 +18,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "django_blog/wsgi.py"
+      "dest": "Dictionary/wsgi.py"
     }
   ]
 }

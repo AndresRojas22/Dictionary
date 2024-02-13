@@ -8,49 +8,59 @@ Andyctionary
 {% endblock title %}
 
 {% block content %}
+
 <body class="bg-gray-300">
-    <div class="bg-white flex flex-col justify-center items-center mt-10 border-solid border-4 border-custom-blue1 lg:m-80 lg:mt-10 sm:m-10">
+    <div
+        class="bg-white flex flex-col justify-center items-center mt-10 border-solid border-4 border-custom-blue1 lg:m-80 lg:mt-10 sm:m-10">
         <div class="flex justify-start items-start" id="main">
-        {% if data %}
+            {% if data %}
             <span class="text-4xl text-left font-bold">{{ data.0.word }}</span>
             <span class="ml-2 font-noto font-light">[{{ data.0.phonetics.1.text|custom_replace }}]</span>
-            <button class="sound"><img src="{% static 'images/sound.png' %}" width="30px" height="30px" class="inline-block ml-3"></button>
+            <button class="sound"><img src="{% static 'images/sound.webp' %}" width="30px" height="30px"
+                    class="inline-block ml-3"></button>
             <audio src="{{audio}}"></audio>
             <br>
         </div>
-            <div id="content" class="inline">
-            <span class="font-serif font-bold">Part of speech: <span class="font-light">{{ data.0.meanings.0.partOfSpeech }}</span></span><br>
-            <span class="font-serif font-bold">Definition: <span class="font-light">{{ data.0.meanings.0.definitions.0.definition }}</span></span><br>
+        <div id="content" class="inline">
+            <span class="font-serif font-bold">Part of speech: <span
+                    class="font-light">{{ data.0.meanings.0.partOfSpeech }}</span></span><br>
+            <span class="font-serif font-bold">Definition: <span
+                    class="font-light">{{ data.0.meanings.0.definitions.0.definition }}</span></span><br>
             {% if data.0.meanings.0.definitions.0.example %}
-            <span class="font-serif font-bold">Example: <span class="font-light">"{{ data.0.meanings.0.definitions.0.example }}"</span></span><br>
-            {% else %}   
+            <span class="font-serif font-bold">Example: <span
+                    class="font-light">"{{ data.0.meanings.0.definitions.0.example }}"</span></span><br>
+            {% else %}
             {% endif %}
-            </div>
-            
+        </div>
+
         <div id="more" class="hidden">
-                {% for meanings in data.0.meanings %}
-                    <span class="font-serif font-bold">Part of speech: <span class="font-light">{{ meanings.partOfSpeech }}</span></span><br>
-                    {% for definition in meanings.definitions %}
-                        <span class="font-serif font-bold">Definition: <span class="font-light">{{ definition.definition }}</span></span><br>
-                        {% if definition.example %}
-                            <span class="font-serif font-bold">Example: <span class="font-light">"{{ definition.example }}"</span></span><br>
-                        {% endif %}
-                        <br>
-                    {% endfor %}
-                {% endfor %}
-        {% else %}
+            {% for meanings in data.0.meanings %}
+            <span class="font-serif font-bold">Part of speech: <span
+                    class="font-light">{{ meanings.partOfSpeech }}</span></span><br>
+            {% for definition in meanings.definitions %}
+            <span class="font-serif font-bold">Definition: <span
+                    class="font-light">{{ definition.definition }}</span></span><br>
+            {% if definition.example %}
+            <span class="font-serif font-bold">Example: <span
+                    class="font-light">"{{ definition.example }}"</span></span><br>
+            {% endif %}
+            <br>
+            {% endfor %}
+            {% endfor %}
+            {% else %}
             <span class="font-serif">No results found</span>
-        {% endif %}
+            {% endif %}
         </div>
         <div class="flex justify-start">
-        <button id="btn" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Read more<span id="dots" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">...</span></button>
+            <button id="btn" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Read more<span
+                    id="dots" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">...</span></button>
         </div>
-        </div>
+    </div>
     </div>
 </body>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
+<script defer>
+    document.addEventListener("DOMContentLoaded", function () {
         var dots = document.getElementById("dots");
         var moreText = document.getElementById("more");
         var btnText = document.getElementById("btn");
@@ -61,13 +71,13 @@ Andyctionary
         let boton = document.querySelector(".sound")
         let audioEtiqueta = document.querySelector("audio")
 
-        boton.addEventListener("click", ()=>{
+        boton.addEventListener("click", () => {
             audioEtiqueta.setAttribute("src", "{{audio}}")
             audioEtiqueta.play();
         })
 
 
-        btnText.addEventListener("click", function() {
+        btnText.addEventListener("click", function () {
             if (dots.classList.contains("hidden")) {
                 dots.classList.remove("hidden");
                 content.classList.remove("hidden");
@@ -92,5 +102,5 @@ Andyctionary
     </div>
 </div>
 {%endblock footer%}
-</html>
 
+</html>

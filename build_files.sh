@@ -1,4 +1,2 @@
-pip install django
-pip install -r requirements.txt
-python manage.py collectstatic
-pip install whitenoise
+pip install -r requeriments.txt
+python3.9 manage.py collectstatic
